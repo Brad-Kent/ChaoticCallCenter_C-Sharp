@@ -1,0 +1,10 @@
+C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\bin\Debug\HelloCSharp.exe.config
+C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\bin\Debug\HelloCSharp.exe
+C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\bin\Debug\HelloCSharp.pdb
+C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\obj\Debug\ChaoticCallCenter.csprojResolveAssemblyReference.cache
+C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\obj\Debug\HelloCSharp.FrameMain.resources
+C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\obj\Debug\HelloCSharp.Properties.Resources.resources
+C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\obj\Debug\ChaoticCallCenter.csproj.GenerateResource.Cache
+C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\obj\Debug\ChaoticCallCenter.csproj.CoreCompileInputs.cache
+C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\obj\Debug\HelloCSharp.exe
+C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\obj\Debug\HelloCSharp.pdb
