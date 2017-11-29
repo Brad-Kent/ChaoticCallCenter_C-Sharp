@@ -30,7 +30,7 @@ namespace HelloCSharp
             // }
             //Console.WriteLine("Hello There");
 
-            //Console.WriteLine(Directory.GetDirectoryRoot("Test.txt"));
+          //  Console.WriteLine(Directory.GetDirectoryRoot("Test.txt"));
 
 
             //FileStream inFile = new FileStream("customers.txt", FileMode.Open, FileAccess.Read);

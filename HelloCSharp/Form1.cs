@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,9 +105,11 @@ namespace HelloCSharp
                 Customer.addNewCustomer(temp);
                 currentIndex = Customer.getCustomerCount() - 1;
                 isAddingNewCustomer = false;
+                
             }
             Customer.updateCustomer(temp, currentIndex);
             updateView();
+            Customer.writeToCustomersIndividual();
         }
 
         private void btnNew_Click(object sender, EventArgs e)

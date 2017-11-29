@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace HelloCSharp
 {
+    [Serializable]
     public class Customer
     {
         private string firstName, lastName, emailAdd, feedBack, serviceProvider, phoneNoHm, rating;
@@ -210,51 +212,53 @@ namespace HelloCSharp
     
         }
 
-        private static void writeToReviews()
+        public static void writeToCustomers()
         {
-            // will do if needed
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            // devise a good file name
+            // in this case: Year_Make_Model.bin
+            string fileName = "customers.bin";
+
+            // stream objects are used when you need to read/write data from
+            // an aribtrary source, such as network data
+            // in this case: we're streaming to a file
+            // we're also using the FileMode.Create option, which will
+            // create the file if it does not exist, but also overwrite
+            // the file if it DOES exist
+
+           // string fileName1 = @"C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\bin\Debug\ser\" + fileName;
+
+            //Directory.CreateDirectory(Path.GetDirectoryName(fileName1));
+
+            FileStream file = new FileStream(fileName, FileMode.Create);
+            
+
+            // using the formatter: serialise the Vehicle object to the File
+            formatter.Serialize(file, customers);
+
+            // and dont forget to close the file handle when you're finished with it
+            // (this is like closing a notepad window that has a document open)
+            file.Close();
         }
-        private static void writeToCustomers()
+        public static void writeToCustomersIndividual()
         {
-            // string fileName = "/Users/bradkent/Documents/SoftwareEng/Java/workspace/CaoticCallCenter/src/oop1/CaoticCallCenter/DataDiles/Customers.txt";// "C:\\Users\\Battl\\IdeaProjects\\Caotic Call Center\\src\\sample/reviews.txt";
-            // try {
-            //     FileWriter fileWriter = new FileWriter(fileName);
+            string fileName1 = @"C:\Users\bradkent\source\repos\HelloCSharp\HelloCSharp\bin\Debug\ser\";// + fileName;
 
-            //     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            //     currentCustomer = 0;
-            //     for(int i = 0; i < numOfCustomers; i++)
-            //     {
-            //         bufferedWriter.write(intTostring(getId())); //ID
-            //         bufferedWriter.newLine();
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream file = null;// = new FileStream(fileName1, FileMode.Create);
 
-            //         bufferedWriter.write(getFirstName());// F name
-            //         bufferedWriter.newLine();
+            for (int i = 0; i < numOfCustomers; i++)
+            {
+                string fileNames = fileName1 + (i + 1).ToString();
+                file = new FileStream(fileNames, FileMode.Create);
 
-            //         bufferedWriter.write(getLastName()); // L name
-            //         bufferedWriter.newLine();
+                formatter.Serialize( (file), customers[i]);
 
-            //         bufferedWriter.write(getEmailAdd()); // email
-            //         bufferedWriter.newLine();
+                file.Close();
+            }
 
-            //         bufferedWriter.write(getPhoneNoHm()); // phone
-            //         bufferedWriter.newLine();
-
-            //         bufferedWriter.write(intTostring(getRating())); // rating
-            //         bufferedWriter.newLine();
-
-            //         bufferedWriter.write(getService());
-            //         bufferedWriter.newLine();
-
-            //         bufferedWriter.newLine();
-            //         currentCustomer++;
-            //         System.out.println("Writing Customers: " + currentCustomer);
-            //     }
-            //     bufferedWriter.close();
-            // }
-            // catch(IOException ex) {System.out.println("Error writing to file '" + fileName + "'");}
-            // ex.printStackTrace();
         }
-
 
 
 
